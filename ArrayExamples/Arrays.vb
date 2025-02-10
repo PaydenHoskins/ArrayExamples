@@ -13,7 +13,7 @@ Module Arrays
         'arrays are cool
         Dim Fruits(5) As String
 
-        Fruits(9) = "bannana"
+        Fruits(8) = "bannana"
 
         Fruits(3) = "grape"
 

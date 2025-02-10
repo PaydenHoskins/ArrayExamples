@@ -13,7 +13,7 @@ Module Arrays
         'arrays are cool
         Dim Fruits(5) As String
         Dim Names() As String = {"john", "Paul", "ringo", "jeff"}
-
+        Dim Beancounts = New Integer() {12342, 343, 1234, 4567}
 
         Fruits(0) = "bannana"
 
@@ -21,7 +21,15 @@ Module Arrays
 
         'Fruits(6) = "apple"
 
-        Console.WriteLine(Names(3))
+        'won't work.
+        'For i = 0 To 10
+        '    Console.WriteLine(Names(i))
+
+        'Next
+
+        For i = LBound(Names) To UBound(Names)
+            Console.WriteLine(Names(i))
+        Next
     End Sub
 
 End Module

@@ -12,14 +12,16 @@ Module Arrays
     Sub Main()
         'arrays are cool
         Dim Fruits(5) As String
+        Dim Names() As String = {"john", "Paul", "ringo", "jeff"}
 
-        Fruits(8) = "bannana"
+
+        Fruits(0) = "bannana"
 
         Fruits(3) = "grape"
 
         'Fruits(6) = "apple"
 
-        Console.WriteLine()
+        Console.WriteLine(Names(3))
     End Sub
 
 End Module

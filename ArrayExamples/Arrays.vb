@@ -37,4 +37,15 @@ Module Arrays
 
     End Sub
 
+    Sub SimpleArray()
+
+    End Sub
+
+    Sub MultiDimentionalArrays()
+        Dim Students(14, 2) As Single
+
+
+    End Sub
+
+
 End Module

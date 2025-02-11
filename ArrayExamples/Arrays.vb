@@ -10,9 +10,15 @@ Option Strict On
 Module Arrays
 
     Sub Main()
-
-        MultiDimentionalArrays()
-
+        Dim UserInput As String
+        UserInput = "Again"
+        Do While UserInput = "Again"
+            UserInput = "No"
+            'MultiDimentionalArrays()
+            TestRandomness()
+            Console.WriteLine("type ""Again"" to run again. ")
+            UserInput = Console.ReadLine()
+        Loop
 
     End Sub
 
@@ -43,6 +49,9 @@ Module Arrays
 
     Sub MultiDimentionalArrays()
         Dim Students(14, 2) As Single
+        Dim classes() As String = {"math", "history", "art"}
+        Dim SomethingElse(,) As Integer = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+        Dim ThreeDimensonalArray(,,) As Integer = {{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}}
 
         Students(0, 0) = 34
         Students(0, 1) = 67
@@ -53,5 +62,26 @@ Module Arrays
         Console.WriteLine(Students(0, 2))
     End Sub
 
+    Function RandomNumberGenerator(Max As Integer, min As Integer) As Integer
+        Dim temp As Single
+        Randomize()
+        temp = Rnd()
+        temp *= Max - min
+        temp += min
+        Return CInt(temp)
+    End Function
+
+    Sub TestRandomness()
+        Dim BeanCounter(20) As Integer
+        For i = 1 To 10000
+            BeanCounter(RandomNumberGenerator(10, 3)) += 1
+
+        Next
+
+        For i = LBound(BeanCounter) To UBound(BeanCounter)
+            Console.WriteLine($"{CStr(i).PadLeft(4)} Hit {CStr(BeanCounter(i)).PadLeft(4)} Many times!")
+        Next
+        Console.WriteLine()
+    End Sub
 
 End Module

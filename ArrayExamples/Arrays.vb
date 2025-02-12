@@ -67,8 +67,9 @@ Module Arrays
         Randomize()
         temp = Rnd()
         temp *= Max - min
-        temp += min
-        Return CInt(temp)
+        temp += min - 1
+        'Math.
+        Return CInt(Math.Floor(temp))
     End Function
 
     Sub TestRandomness()
@@ -84,4 +85,12 @@ Module Arrays
         Console.WriteLine()
     End Sub
 
+    Sub SplittingStringIntoArrays()
+        Dim LotsOFruits As String = "grape,coconut,apple,pear,peach,banana,tomato "
+        Dim Fruits() As String
+        Fruits = Split(LotsOFruits, ",")
+        For Each ThingyDoodle In Fruits
+            Console.WriteLine(Trim(ThingyDoodle))
+        Next
+    End Sub
 End Module
